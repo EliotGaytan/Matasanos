@@ -1,0 +1,266 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: url(a.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.radio {
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+    padding: 10px 15px;
+    color: #61a5c2;
+}
+
+.contenedor {
+    width: 100%;
+    padding: 15px;
+}
+
+.formulario {
+    background: #fff;
+    margin-top: 150px;
+    padding: 3px;
+}
+
+h1 {
+    text-align: center;
+    color: #1a2537;
+    font-size: 30px;
+}
+
+input[type="text"],
+input[type="password"] {
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: none;
+}
+
+.input-contenedor {
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+}
+
+.icon {
+    min-width: 50px;
+    text-align: center;
+    color: #999;
+}
+
+.button {
+    border: none;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    background: #1a2537;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.button:hover {
+    background: cadetblue;
+}
+
+p {
+    text-align: left;
+}
+
+.link {
+    text-decoration: none;
+    color: #1a2537;
+    font-weight: 600;
+}
+
+.link:hover {
+    color: cadetblue;
+}
+
+@media(min-width:768px) {
+    .formulario {
+        margin: auto;
+        width: 800px;
+        margin-top: 150px;
+        border-radius: 2%;
+    }
+}
+
+.formulario h2 {
+    font-size: 16px;
+    color: #001F3F;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.formulario>div {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.formulario .radio label,
+.formulario .checkbox label {
+    display: inline-block;
+    cursor: pointer;
+    color: #61a5c2;
+    position: relative;
+    padding: 5px 15px 5px 51px;
+    font-size: 1em;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.formulario .radio label:hover,
+.formulario .checkbox label:hover {
+    background: rgba(255, 65, 54, 0.1);
+}
+
+.formulario .radio label:before,
+.formulario .checkbox label:before {
+    content: "";
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    left: 15px;
+    border-radius: 50%;
+    background: none;
+    border: 3px solid #61a5c2;
+}
+
+.formulario input[type="radio"] {
+    display: none;
+}
+
+.formulario input[type="radio"]:checked+label:before {
+    display: none;
+}
+
+.formulario input[type="radio"]:checked+label {
+    padding: 5px 15px;
+    background: #61a5c2;
+    border-radius: 2px;
+    color: #fff;
+}
+
+.formulario .checkbox label:before {
+    border-radius: 3px;
+}
+
+.formulario .checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.formulario .checkbox input[type="checkbox"]:checked+label:before {
+    display: none;
+}
+
+.formulario .checkbox input[type="checkbox"]:checked+label {
+    background: #61a5c2;
+    color: #fff;
+    padding: 5px 15px;
+}
+
+#show-modal {
+    text-align: center;
+    background: cornflowerblue;
+    padding: 15px 15px;
+    color: white;
+    font-weight: 500;
+    font-size: 1.5em;
+    border-radius: 3.5px;
+    text-decoration: none;
+    transition: all 0.15s linear;
+}
+
+#show-modal:hover {
+    cursor: pointer;
+    background: #4f89c2;
+}
+
+.modal {
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    z-index: 99999999;
+    background: rgba(255, 65, 54, 0.1);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.modal .content-modal {
+    width: 100%;
+    max-width: 500px;
+    position: fixed;
+    left: 50%;
+    top: -100vh;
+    transition: top 0.35s ease;
+    margin-left: -250px;
+    background: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
+    border-radius: 2px;
+    z-index: 9999999;
+}
+
+.modal h2 {
+    padding: 0.5em;
+    text-align: left;
+    color: #001F3F;
+    margin: 0;
+}
+
+.modal article {
+    height: 100%;
+    background: #caf0f8;
+}
+
+.close-modal {
+    color: #61a5c2;
+    position: absolute;
+    top: 0.2em;
+    right: 0.375em;
+    margin: 0;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.modal a:hover {
+    color: #999;
+}
+
+.modal:target {
+    opacity: 1;
+    top: 0;
+}
+
+.modal .btn-close-modal {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999991;
+}
+
+.modal:target .content-modal {
+    top: 50px;
+    transition: top 0.35s ease;
+}
+
+@media (max-width: 500px) {
+    .modal .content-modal {
+        width: 90%;
+        max-width: none;
+        left: 5%;
+        margin-left: 0 1em;
+    }
+}
